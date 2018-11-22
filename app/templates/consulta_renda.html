@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+  {% block body %}
+  <div class="container">
+    <h5 class="submenu"><i class="fas fa-dollar-sign"></i> Consulta Renda</h5>
+
+    <form method="POST" name="pessoa" id="pessoa" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="area">Area Plantada</label>
+        <div name="autocomplete" id="autocomplete">
+            <input type="text" id="area" name="area" class="form-control" placeholder="Digite o tamanho da area plantada" required autofocus autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="data">Data do plantio</label>
+        <div>
+            <input type="date" id="data" name="data" class="form-control" placeholder="Digite a data do plantio" required autofocus autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="amostra">Tamanho da amostra</label>
+        <div name="autocomplete" id="autocomplete">
+            <input type="text" id="amostra" name="amostra" class="form-control typeahead" placeholder="Digite o tamanho da amostra (mts2)" required autofocus autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="peso">Peso da amostra</label>
+        <div name="autocomplete" id="autocomplete">
+            <input type="text" id="peso" name="peso" class="form-control typeahead" placeholder="Digite o peso da amostra" required autofocus autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="tom">Tom do reagente</label>
+        <div class="">
+            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
+            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
+            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="local">Local da plantação</label>
+        <div>
+            <input type="text" id="local" name="local" class="form-control" placeholder="Digite o local da plantação" required autofocus autocomplete="off">
+        </div>
+      </div>
+
+      <!-- botoes -->
+      <div class="row botoes">
+        <div class="col-6" style="text-align: right;">
+            <a id="btn_cancelar" href="#" class="btn btn-block btn-danger">Cancelar</a>
+        </div>
+        <div class="col-6">
+            <button id="btn_confirma" type="submit" class="btn btn-block btn-success" disabled>Confirma</button>
+        </div>
+      </div>
+      <br><br>
+    </form>
+
+  </div><!-- /.container -->
+
+  <style type="text/css">
+    .submenu{
+      text-align: center;
+    }
+    input[type=color].form-control {
+      padding: 0px;
+    }
+  </style>
+  {% endblock %}
+
+  {% block javascript %}
+    <script type="text/javascript">
+      
+    </script>
+  {% endblock %}
+
+

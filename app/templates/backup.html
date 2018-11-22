@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+  {% block body %}
+  <div class="container">
+
+    <h5 class="submenu"><i class="fas fa-download"></i> Backup</h5>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">System</th>
+          <th scope="col">Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DataBase</td>
+          <td><button class="btn btn-outline-success btn-block" id="btn_db" type="button"><i class="fas fa-download"></i></button></td>
+        </tr>
+        <tr>
+          <td>Log</td>
+          <td><i class="fas fa-download"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div  class="footer">
+      <p>Author: Junior Tada</p>
+      <p>tadasoftware@gmail.com</p>
+    </div>
+
+  </div><!-- /.container -->
+
+  <style type="text/css">
+    tr{
+      text-align: center;
+    }
+    .submenu{
+      text-align: center;
+    }
+    .footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
+      background-color: #efefef;
+      text-align: center;
+    }
+    .footer p{
+      font-size: .8rem;
+    }
+  </style>
+  {% endblock %}
+
+  {% block javascript %}
+    <script type="text/javascript">
+      
+    </script>
+  {% endblock %}
+
+

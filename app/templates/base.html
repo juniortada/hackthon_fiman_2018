@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Junior Tada"/>
+    <title>Hackthon Fiman 2018</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.ico')}}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/android-icon-36x36.png')}}"> Hackthon Fiman 2018</a>
+        </div> <!-- /.navbar-header -->
+        <div class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" data-target="#myModal" data-toggle="modal"><i class="fas fa-bars"></i></a>
+            </li>
+        </div>
+
+    </nav>
+    <!-- flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div id="div_flash" class="alert {{category}} alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ message | safe }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-bars"></i> Menu</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal" onclick="location.href='{{ url_for('index')}}';"><i class="fas fa-home"></i> Home</button>
+            <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal" onclick="location.href='{{ url_for('consulta_renda')}}';"><i class="fas fa-dollar-sign"></i> Consulta Renda</button>
+            <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal"><i class="fas fa-cog"></i> Config</button>
+            <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal" onclick="location.href='#';"><i class="fas fa-download"></i> Backup</button>
+            <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal" onclick="location.href='#';"><i class="fas fa-code"></i> About</button>
+            <button type="button" class="btn btn-outline-danger btn-block" data-dismiss="modal"><i class="fas fa-sign-out-alt"></i> Logout</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+      body {
+        background-color: #eee;
+      }
+      #menu-icon {
+        float: right;
+      }
+    </style>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <!-- Popper for Bootstrap -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- Fontawesome -->
+    <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+    {% block javascript %}{% endblock %}
+  </body>
+</html>

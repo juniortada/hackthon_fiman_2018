@@ -1,0 +1,7 @@
+{
+    "DEBUG": true,
+    "CREATE_DB": true,
+    "FIRST_RUN": true,
+    "MAX_CONTENT_LENGTH": 16,
+    "DB_URI": "db_uri"
+  }
