@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+  {% block body %}
+  <div class="container">
+    <h5 class="submenu"><i class="fas fa-chart-line"></i></i> Resultados</h5>
+
+    <div class="form-group">
+      <label for="qtde">Quantidade em Toneladas</label>
+      <div>
+          <input type="text" id="qtde" name="qtde" class="form-control" value="100" disabled="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amido">Quantidade de Amido</label>
+      <div>
+          <input type="text" id="amido" name="amido" class="form-control" value="30%" disabled="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="total">Valor Total</label>
+      <div>
+          <input type="text" id="total" name="total" class="form-control" value="R$ 30.000,00" disabled="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="grama">Valor Por Grama</label>
+      <div>
+          <input type="text" id="grama" name="grama" class="form-control" value="R$ 0,70" disabled="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="sugestao">Sugestão</label>
+      <div>
+          <input type="text" id="sugestao" name="sugestao" class="form-control" value="Ideal para venda" disabled="">
+      </div>
+    </div>
+    
+    <div class="div_btn">
+      <button type="button" class="btn btn-secondary" onclick="location.href='{{ url_for('index')}}';">Voltar</button>
+    </div>
+
+  </div><!-- /.container -->
+
+  <style type="text/css">
+    .submenu{
+      text-align: center;
+    }
+    .div_btn{
+      text-align: center;
+    }
+  </style>
+  {% endblock %}
+
+  {% block javascript %}
+    <script type="text/javascript">
+      
+    </script>
+  {% endblock %}
+
+

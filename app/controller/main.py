@@ -16,3 +16,8 @@ def sobre():
 @app.route('/consulta_renda')
 def consulta_renda():
     return render_template('consulta_renda.html')
+
+
+@app.route('/resultados')
+def resultados():
+    return render_template('resultados.html')
