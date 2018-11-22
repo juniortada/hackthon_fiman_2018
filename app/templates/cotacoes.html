@@ -13,18 +13,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr ondblclick="location.href='#'">
-          <td>1</td>
-          <td>500 ton</td>
-          <td>35%</td>
-          <td>João das Neves</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>700 ton</td>
-          <td>25%</td>
-          <td>Sebastião Silva</td>
-        </tr>
+        {% if rendas %}
+          {% for renda in rendas %}
+            <tr>
+              <td>{{renda.id}}</td>
+              <td>{{renda.peso_total}}</td>
+              <td>25%</td>
+              <td>Sebastião Silva</td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+        
       </tbody>
     </table>
 

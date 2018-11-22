@@ -29,4 +29,6 @@ def resultados():
 
 @app.route('/cotacoes')
 def cotacoes():
-    return render_template('cotacoes.html')
+    with session_scope() as session:
+        dao = Dao(session)
+        return ControllerAgro(dao).cotacoes()

@@ -88,6 +88,20 @@ class Dao(object):
         del campos['_sa_instance_state']
         self.session.query(obj.__class__).filter_by(**filtro).update(obj.__dict__)
 
+    def buscarTodos(self, classe, inativo=False, reverso=None):
+        """Busca todos os registro da classe passada em parametro, só ativos
+        por padrão. Pode passar os parametros para buscar incluindo inativos,
+        ou em ordem reversa."""
+        if reverso:
+            ordem = classe.id.desc()
+        else:
+            ordem = classe.id
+        if inativo:
+            return self.session.query(classe).order_by(ordem).all()
+        else:
+            return self.session.query(classe).filter(classe.ativo==True)\
+                .order_by(ordem)
+
 
 class DaoUsuario(Dao):
     def __init__(self, session):

@@ -32,6 +32,7 @@ def dadosIniciais():
             renda.area = float(2)
             renda.amostra = float(1)
             renda.peso = float(5)
+            renda.peso_total = float(200000)
             # renda.data = datetime.datetime.now
             renda.tom = 1
             renda.local = 'Paranavaí'

@@ -31,12 +31,15 @@ class ControllerAgro(object):
 
                 # valor em reais
                 valor_tonelada = 700
-                valor_grama = 0.70              
+                renda.grama = 0.70              
 
                 renda.total = Decimal((renda.peso_total/1000) * valor_tonelada)
 
                 # calculo da % de amido
-                
+                if renda.tom != '1':
+                    renda.sugestao = 'Ideal para venda'
+                else:
+                    renda.sugestao = 'Aguardar porcentagem de amido aumentar'
 
                 self.dao.salvar(renda)
 
@@ -45,3 +48,12 @@ class ControllerAgro(object):
                 log.exception('salvar_renda | ' + str(e))
                 return render_template('index.html')
         return render_template('consulta_renda.html')
+
+
+    def cotacoes(self):
+        try:
+            rendas = self.dao.buscarTodos(Renda)
+            return render_template('cotacoes.html', rendas=rendas)
+        except Exception as e:
+            log.exception('salvar_renda | ' + str(e))
+            return render_template('index.html')
