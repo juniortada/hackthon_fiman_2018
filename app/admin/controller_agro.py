@@ -43,7 +43,7 @@ class ControllerAgro(object):
 
                 self.dao.salvar(renda)
 
-                return render_template('resultados.html')
+                return render_template('resultados.html', renda=renda)
             except Exception as e:
                 log.exception('salvar_renda | ' + str(e))
                 return render_template('index.html')
@@ -55,5 +55,13 @@ class ControllerAgro(object):
             rendas = self.dao.buscarTodos(Renda)
             return render_template('cotacoes.html', rendas=rendas)
         except Exception as e:
-            log.exception('salvar_renda | ' + str(e))
+            log.exception('cotacoes | ' + str(e))
+            return render_template('index.html')
+
+
+    def resultados(self):
+        try:
+            return render_template('resultados.html')
+        except Exception as e:
+            log.exception('resultados | ' + str(e))
             return render_template('index.html')
