@@ -18,7 +18,13 @@
             <tr>
               <td>{{renda.id}}</td>
               <td>{{renda.peso_total}}</td>
-              <td>25%</td>
+              <td>
+                {% if renda.tom == 1 %}
+                  18%
+                {% else %}
+                  26%
+                {% endif %}
+              </td>
               <td>Sebastião Silva</td>
             </tr>
           {% endfor %}
