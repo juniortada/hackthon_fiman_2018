@@ -28,6 +28,7 @@ def dadosIniciais():
             # renda
             renda = Renda()
             renda.produtor = 'Maria do Céu'
+            renda.variedade = 'Iapar'
             renda.area = float(2)
             renda.amostra = float(1)
             renda.peso = float(5)

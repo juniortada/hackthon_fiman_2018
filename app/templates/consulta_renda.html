@@ -5,9 +5,19 @@
 
     <form method="POST" name="renda" id="renda">
       <div class="form-group">
-        <label for="area">Area Plantada</label>
-        <div name="autocomplete" id="autocomplete">
-            <input type="text" id="area" name="area" class="form-control" placeholder="Digite o tamanho da area plantada" required autofocus autocomplete="off">
+        <label for="area">Área Plantada</label>
+        <div>
+            <input type="text" id="area" name="area" class="form-control" placeholder="Em mts2 quadrados" required autofocus autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="variedade">Variedade</label>
+        <div>
+            <select class="form-control" id="variedade" name="variedade">
+              <option value="Bahianinha">Bahianinha</option>
+              <option value="Fécula Branca">Fécula Branca</option>
+              <option value="Iapar">Iapar</option>
+            </select>
         </div>
       </div>
       <div class="form-group">
@@ -18,27 +28,41 @@
       </div>
       <div class="form-group">
         <label for="amostra">Tamanho da amostra</label>
-        <div name="autocomplete" id="autocomplete">
+        <div>
             <input type="text" id="amostra" name="amostra" class="form-control typeahead" placeholder="Digite o tamanho da amostra (mts2)" required autofocus autocomplete="off">
         </div>
       </div>
       <div class="form-group">
         <label for="peso">Peso da amostra</label>
-        <div name="autocomplete" id="autocomplete">
-            <input type="text" id="peso" name="peso" class="form-control typeahead" placeholder="Digite o peso da amostra" required autofocus autocomplete="off">
+        <div>
+            <input type="text" id="peso" name="peso" class="form-control typeahead" placeholder="Digite o peso da amostra em kg" required autofocus autocomplete="off">
         </div>
       </div>
       <div class="form-group">
         <label for="tom">Tom do reagente</label>
         <div class="">
-            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
-            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
-            <input type="color" value="#e66465" id="tom" name="tom" class="form-control">
+            <div class="form-check">
+              <label class="form-check-label" for="baixo">
+              <input class="form-check-input" type="radio" name="tom" id="tom" value="1" checked>
+                Imagem 1
+              </label>
+              <img src="{{ url_for('static', filename='image/amostra_baixa.jpeg')}}">
+            </div>
+        </div>
+        <br>
+        <div class="">
+            <div class="form-check">
+              <label class="form-check-label" for="alto">
+              <input class="form-check-input" type="radio" name="tom" id="tom" value="2">
+                Imagem 2
+              </label>
+              <img src="{{ url_for('static', filename='image/amostra_alta.jpeg')}}">
+            </div>
         </div>
       </div>
       <div class="form-group">
-        <label for="local">Local da plantação</label>
         <div>
+        <label for="local">Local da plantação</label>
             <input type="text" id="local" name="local" class="form-control" placeholder="Digite o local da plantação" required autofocus autocomplete="off">
         </div>
       </div>
@@ -63,6 +87,10 @@
     }
     input[type=color].form-control {
       padding: 0px;
+    }
+    img{
+      max-width: 96px;
+      max-height: 96px;
     }
   </style>
   {% endblock %}

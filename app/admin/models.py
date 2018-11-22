@@ -61,12 +61,20 @@ class Renda(Base):
     __tablename__ = 'renda'
 
     produtor = Column(String(100))
+    variedade = Column(String(100))
     area = Column(Float(3))
+    # tamanho da amostra
     amostra = Column(Float(3))
+    # peso da amostra
     peso  = Column(Float(3))
+    # peso total 
+    peso_total  = Column(Float(3))
     data = Column(DateTime, default=datetime.datetime.now)
+    # cor do reagente
     tom = Column(Integer)
     local = Column(String(100))
     sugestao = Column(String(100))
+    # valor total
     total = Column(DECIMAL(10, 4))
+    # valor em gramas
     grama = Column(DECIMAL(10, 4))
