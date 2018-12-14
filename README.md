@@ -10,3 +10,5 @@ Tecnologias utilizadas:
 - sqlalchemy
 - postgresql
 - bootstrap
+
+![alt text](https://github.com/juniortada/hackthon_fiman_2018/blob/master/app/static/image/equipe_hackthon_fiman_2018.jpg)
